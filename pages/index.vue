@@ -1,5 +1,8 @@
 <template>
-    <items/>
+    <div>
+        <h1>Top</h1>
+        <items/>
+    </div>
 </template>
 
 <script>
