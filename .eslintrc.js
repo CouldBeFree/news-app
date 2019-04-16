@@ -1,4 +1,4 @@
-module.exports = {
+/*module.exports = {
   root: true,
   parser: 'babel-eslint',
   env: {
@@ -13,4 +13,4 @@ module.exports = {
   // add your custom rules here
   rules: {},
   globals: {}
-}
+}*/
