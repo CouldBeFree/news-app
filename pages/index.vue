@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div class="f1 code">
+    <div class="code">
       Hello World
     </div>
     <ul>
-      <li v-for="user in users" :key="user.id">{{ user.login }}</li>
+      <li v-for="item in items" :key="item.id">{{ item.title }}</li>
     </ul>
   </div>
 </template>
@@ -15,7 +15,8 @@
 
   export default {
     computed: mapState([
-      "users"
+      "items",
+      "ids"
     ])
   }
 </script>
