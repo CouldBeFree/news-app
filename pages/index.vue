@@ -1,22 +1,17 @@
 <template>
-  <div>
-    <div class="code">
-      Hello World
-    </div>
-    <ul>
-      <li v-for="item in items" :key="item.id">{{ item.title }}</li>
-    </ul>
-  </div>
+    <items/>
 </template>
 
 <script>
-  import axios from '~/plugins/axios';
-  import { mapState } from 'vuex'
+import Items from '~/components/Items.vue';
 
-  export default {
-    computed: mapState([
-      "items",
-      "ids"
-    ])
+export default {
+  components: {
+    'items': Items
+  },
+  async fetch({store}) {
+    await store.dispatch("LOAD_ITEMS", "topstories.json")
   }
+}
+
 </script>
