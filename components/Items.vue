@@ -7,13 +7,20 @@
                 </div>
                 <div class="title">
                     {{item.title}}
+                    <template v-if="item.url">
+                        <a class="f7" :href="item.url">{{item.url | hostname}}</a>
+                    </template>
                 </div>
                 <div class="details">
-                    by {{item.by}} {{item.time | timeSince}} ago
+                    <nuxt-link :to="'/user/' + item.by">{{item.by}}</nuxt-link>
+                    by {{item.by}}
+                    <p class="ma0 i f7">{{item.time | timeSince}} ago</p>
                 </div>
-                <div class="comments">
-                    {{item.descendants}} comments
-                </div>
+                <template v-if="item.descendants">
+                    <div class="comments">
+                        {{item.descendants}} comments
+                    </div>
+                </template>
             </li>
         </ul>
     </div>
